@@ -1,0 +1,298 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/14/2022  16:19:33  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\shiyi.obj TO .\Objects\shiyi PRINT (.\Listings\shiyi.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\shiyi.obj (SHIYI)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\shiyi (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         ?DT?_SHUMAGUAN_BIT?SHIYI
+            DATA    000DH     0005H     UNIT         ?DT?SHIYI
+            DATA    0012H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0013H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00ADH     UNIT         ?PR?_SHUMAGUAN_BIT?SHIYI
+            CODE    00B0H     008CH     UNIT         ?C_C51STARTUP
+            CODE    013CH     005BH     UNIT         ?PR?SCAN_KEYS?SHIYI
+            CODE    0197H     0039H     UNIT         ?PR?ALLINIT?SHIYI
+            CODE    01D0H     0031H     UNIT         ?CO?SHIYI
+            CODE    0201H     002DH     UNIT         ?C?LIB_CODE
+            CODE    022EH     002AH     UNIT         ?PR?_SHUMAGUAN_CONTROL?SHIYI
+            CODE    0258H     0029H     UNIT         ?PR?_DELAY_MS?SHIYI
+            CODE    0281H     0011H     UNIT         ?PR?INIT?SHIYI
+            CODE    0292H     0010H     UNIT         ?C_INITSEG
+            CODE    02A2H     000AH     UNIT         ?PR?MAIN?SHIYI
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\shiyi (?C_STARTUP)
+
+
+SEGMENT                                DATA_GROUP 
+  +--> CALLED SEGMENT                START    LENGTH
+----------------------------------------------------
+?C_C51STARTUP                        -----    -----
+  +--> ?PR?MAIN?SHIYI
+  +--> ?C_INITSEG
+
+?PR?MAIN?SHIYI                       -----    -----
+  +--> ?PR?INIT?SHIYI
+  +--> ?PR?SCAN_KEYS?SHIYI
+
+?PR?SCAN_KEYS?SHIYI                  -----    -----
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/14/2022  16:19:33  PAGE 2
+
+
+  +--> ?PR?_DELAY_MS?SHIYI
+  +--> ?PR?_SHUMAGUAN_CONTROL?SHIYI
+
+?PR?_SHUMAGUAN_CONTROL?SHIYI         0012H    0001H
+  +--> ?PR?_DELAY_MS?SHIYI
+  +--> ?CO?SHIYI
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\shiyi (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:00B0H         SEGMENT       ?C_C51STARTUP
+  I:0013H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:00B3H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:00B0H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:00B0H         LINE#         133
+  C:00B2H         LINE#         134
+  C:00B3H         LINE#         135
+  C:00B4H         LINE#         136
+  C:00B6H         LINE#         185
+  C:00B9H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        SHIYI
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  B:00B0H.0       PUBLIC        R1
+  D:00B0H         PUBLIC        P3
+  B:00B0H.1       PUBLIC        R2
+  D:00C0H         PUBLIC        P4
+  B:00B0H.2       PUBLIC        R3
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/14/2022  16:19:33  PAGE 3
+
+
+  B:00B0H.3       PUBLIC        R4
+  C:01ECH         PUBLIC        weizhi
+  C:0281H         PUBLIC        Init
+  C:013CH         PUBLIC        Scan_keys
+  C:02A2H         PUBLIC        main
+  C:022EH         PUBLIC        _shumaguan_control
+  C:01D0H         PUBLIC        shuzi
+  D:000DH         PUBLIC        wei
+  C:01E2H         PUBLIC        num
+  C:025CH         PUBLIC        _delay_ms
+  D:000EH         PUBLIC        count1
+  D:000FH         PUBLIC        count2
+  D:0010H         PUBLIC        count3
+  D:0011H         PUBLIC        count4
+  C:0003H         PUBLIC        _shumaguan_bit
+  C:0197H         PUBLIC        allinit
+  B:00C0H.4       PUBLIC        C1
+  B:00C0H.2       PUBLIC        C2
+  B:00B0H.5       PUBLIC        C3
+  B:00B0H.4       PUBLIC        C4
+  C:0258H         SYMBOL        L?0050
+  -------         PROC          L?0049
+  -------         ENDPROC       L?0049
+  C:0258H         SYMBOL        L?0050
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        q
+  D:0002H         SYMBOL        w
+  -------         ENDDO         
+  C:025CH         LINE#         100
+  C:025CH         LINE#         102
+  C:026CH         LINE#         103
+  C:0279H         LINE#         104
+  C:0280H         LINE#         105
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          ALLINIT
+  C:0197H         LINE#         107
+  C:0197H         LINE#         108
+  C:0197H         LINE#         109
+  C:019FH         LINE#         110
+  C:01A2H         LINE#         111
+  C:01A5H         LINE#         113
+  C:01ADH         LINE#         114
+  C:01B0H         LINE#         115
+  C:01B3H         LINE#         117
+  C:01BBH         LINE#         118
+  C:01BEH         LINE#         119
+  C:01C1H         LINE#         120
+  C:01C9H         LINE#         121
+  C:01CCH         LINE#         122
+  C:01CFH         LINE#         123
+  -------         ENDPROC       ALLINIT
+  -------         PROC          _SHUMAGUAN_BIT
+  D:0008H         SYMBOL        a
+  D:000BH         SYMBOL        b
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/14/2022  16:19:33  PAGE 4
+
+
+  C:01F4H         SYMBOL        led_p
+  D:000CH         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         126
+  C:000BH         LINE#         127
+  C:000BH         LINE#         130
+  C:000EH         LINE#         131
+  C:000EH         LINE#         132
+  C:0022H         LINE#         133
+  C:0022H         LINE#         134
+  C:002AH         LINE#         135
+  C:002DH         LINE#         136
+  C:0035H         LINE#         137
+  C:0044H         LINE#         138
+  C:004BH         LINE#         139
+  C:0053H         LINE#         140
+  C:0068H         LINE#         141
+  C:006AH         LINE#         142
+  C:006CH         LINE#         144
+  C:006CH         LINE#         145
+  C:0074H         LINE#         146
+  C:0077H         LINE#         147
+  C:007FH         LINE#         148
+  C:008EH         LINE#         149
+  C:0095H         LINE#         150
+  C:009DH         LINE#         151
+  C:00A0H         LINE#         152
+  C:00A3H         LINE#         153
+  C:00A3H         LINE#         155
+  C:00AFH         LINE#         156
+  -------         ENDPROC       _SHUMAGUAN_BIT
+  -------         PROC          _SHUMAGUAN_CONTROL
+  D:0012H         SYMBOL        a
+  D:0001H         SYMBOL        b
+  C:022EH         LINE#         158
+  C:0232H         LINE#         159
+  C:0232H         LINE#         160
+  C:0239H         LINE#         161
+  C:0249H         LINE#         163
+  C:0253H         LINE#         164
+  -------         ENDPROC       _SHUMAGUAN_CONTROL
+  -------         PROC          INIT
+  C:0281H         LINE#         16
+  C:0281H         LINE#         17
+  C:0281H         LINE#         18
+  C:0289H         LINE#         19
+  C:0291H         LINE#         20
+  -------         ENDPROC       INIT
+  -------         PROC          SCAN_KEYS
+  C:013CH         LINE#         21
+  C:013CH         LINE#         22
+  C:013CH         LINE#         23
+  C:0144H         LINE#         24
+  C:0147H         LINE#         25
+  C:0147H         LINE#         26
+  C:014AH         LINE#         27
+  C:014DH         LINE#         28
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/14/2022  16:19:33  PAGE 5
+
+
+  C:014DH         LINE#         29
+  C:0154H         LINE#         30
+  C:0154H         LINE#         31
+  C:0159H         LINE#         33
+  C:015CH         LINE#         34
+  C:015CH         LINE#         35
+  C:015FH         LINE#         36
+  C:0162H         LINE#         37
+  C:0162H         LINE#         38
+  C:0169H         LINE#         39
+  C:0169H         LINE#         40
+  C:016EH         LINE#         42
+  C:0171H         LINE#         43
+  C:0171H         LINE#         44
+  C:0174H         LINE#         45
+  C:0177H         LINE#         46
+  C:0177H         LINE#         47
+  C:017EH         LINE#         48
+  C:017EH         LINE#         49
+  C:0183H         LINE#         51
+  C:0186H         LINE#         52
+  C:0186H         LINE#         53
+  C:0189H         LINE#         54
+  C:018CH         LINE#         55
+  C:018CH         LINE#         56
+  C:0193H         LINE#         57
+  C:0193H         LINE#         58
+  C:0196H         LINE#         59
+  C:0196H         LINE#         60
+  -------         ENDPROC       SCAN_KEYS
+  -------         PROC          MAIN
+  C:02A2H         LINE#         61
+  C:02A2H         LINE#         62
+  C:02A2H         LINE#         63
+  C:02A2H         LINE#         64
+  C:02A2H         LINE#         65
+  C:02A5H         LINE#         66
+  C:02A7H         LINE#         67
+  C:02AAH         LINE#         69
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        SHIYI
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0201H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ALLINIT?SHIYI
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SHUMAGUAN_BIT?SHIYI
+
+Program Size: data=20.0 xdata=0 code=684
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
